@@ -1,3 +1,4 @@
+//Content Compenent displays hi and date
 const Content = ()=>{
     return(
         <div>
@@ -7,5 +8,5 @@ const Content = ()=>{
     );
 }
 
-//To use in other files
+//export to app
 export default Content;
