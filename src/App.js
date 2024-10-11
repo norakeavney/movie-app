@@ -4,6 +4,8 @@ import NavigationBar from './components/nav';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/content';
+import Movies from './components/Movies';
+import Read from './components/Read';
 
 // App Function - Displaying compenents - using client side routing handling paths
 function App() {
@@ -11,8 +13,8 @@ function App() {
     <Router>
       <NavigationBar />
       <Routes>
-        <Route path="/home" element={<Content />} />
-        <Route path="/read" element={<Footer /> } />
+        <Route path="/" element={<Content />} />
+        <Route path="/read" element={<Read /> } />
         <Route path="/create" element={<Header />} />
       </Routes>
     </Router>
