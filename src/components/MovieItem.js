@@ -14,10 +14,8 @@ function MovieItem(props) {
       <Card> {/* Card component to display movie details */}
         <Card.Header>{props.mymovie.Title}</Card.Header> 
         <Card.Body>
-          <blockquote className="blockquote mb-0"> {/* Blockquote for movie details */}
             <img src={props.mymovie.Poster} alt={props.mymovie.Title} /> {/* Movie poster image */}
             <footer>{props.mymovie.Year}</footer> {/* Movie release year */}
-          </blockquote>
         </Card.Body>
       </Card>
     </div>
