@@ -11,13 +11,16 @@ function MovieItem(props) {
 
   return (
     <div>
-      <Card> {/* Card component to display movie details */}
-        <Card.Header>{props.mymovie.Title}</Card.Header> 
+      <Card border="primary" style={{ width: '25rem' }}> {/* Card component to display movie details */}
+        <Card.Img variant="top" src={props.mymovie.Poster} />
         <Card.Body>
-            <img src={props.mymovie.Poster} alt={props.mymovie.Title} /> {/* Movie poster image */}
+        <Card.Title>{props.mymovie.Title}</Card.Title>
+          <blockquote className="bq"> {/* Blockquote for movie details */}
             <footer>{props.mymovie.Year}</footer> {/* Movie release year */}
+          </blockquote>
         </Card.Body>
       </Card>
+      <br />
     </div>
   );
 }
