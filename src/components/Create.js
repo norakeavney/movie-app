@@ -1,16 +1,21 @@
+//Imports
 import { useState } from "react";
 
 function Create() {
+//title is variable, setTitle updates the title, useState is initial value
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [poster, setPoster] = useState('');
 
+  //handleSubmit takes in event and logs to console
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(title, year, poster);
     
   }
 
+  //Form with fields for title, year and poster 
+  //Allows button to pressed to sent data into handleSubmit
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -45,4 +50,5 @@ function Create() {
   );
 }
 
+//export
 export default Create;
