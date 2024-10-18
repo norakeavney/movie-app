@@ -12,10 +12,10 @@ const Read = ()=>{
                 //asynchronisation
                 //Retrieve data from API using axios
                 axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
-                //Once retrieved response then display using setMovies - function to update the variable movies 
+                //Once retrieved - update the state variable 'movies' using setMovies
                 .then( (response) => {
-                    console.log(response.data)
-                    setMovies(response.data.movies)
+                    console.log(response.data) // Log the response data to the console
+                    setMovies(response.data.movies) // Set the movies state with the retrieved data
                 })
                 //Error Handling
                 .catch((error) => {
@@ -23,11 +23,12 @@ const Read = ()=>{
                 }
 
                 )
-            }, []
+            }, [] // effect runs only once
         );
 
     return(
         <div>
+            {/* Render the Movies component and pass the retrieved movies as a prop */}
             <Movies myMovies = {movies} />
         </div>
     );
