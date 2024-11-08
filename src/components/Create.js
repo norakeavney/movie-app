@@ -12,6 +12,7 @@ function Create() {
     e.preventDefault();
     console.log(title, year, poster);
     
+    
   }
 
   //Form with fields for title, year and poster 

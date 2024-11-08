@@ -10,8 +10,8 @@ const Read = ()=>{
         useEffect(
             () => {
                 //asynchronisation
-                //Retrieve data from API using axios
-                axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
+                //Retrieve data from API server using axios
+                axios.get('localhost:4000/api/movies')
                 //Once retrieved - update the state variable 'movies' using setMovies
                 .then( (response) => {
                     console.log(response.data) // Log the response data to the console
