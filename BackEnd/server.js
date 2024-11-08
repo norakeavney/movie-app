@@ -15,6 +15,10 @@ app.use(function(req, res, next) {
   next();
 });
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 //Sets up route for movies page
 app.get('/api/movies', (req, res) => {
     const movies = [
@@ -51,6 +55,14 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
+//POST request handler
+app.post('/api/movies', (req, res) => {
+    const title = req.body.title;
+    const year = req.body.year;
+    const poster = req.body.poster;
+    console.log(`Title: ${title}, Year: ${year}, Poster: ${poster}`);
+    res.send(`Title: ${title}, Year: ${year}, Poster: ${poster}`);
+});
 
 
 // This line makes the server start listening on the specified port.

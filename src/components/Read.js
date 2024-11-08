@@ -11,11 +11,11 @@ const Read = ()=>{
             () => {
                 //asynchronisation
                 //Retrieve data from API server using axios
-                axios.get('localhost:4000/api/movies')
+                axios.get('http://localhost:4000/api/movies')
                 //Once retrieved - update the state variable 'movies' using setMovies
                 .then( (response) => {
                     console.log(response.data) // Log the response data to the console
-                    setMovies(response.data.movies) // Set the movies state with the retrieved data
+                    setMovies(response.data.myMovies) // Set the movies state with the retrieved data
                 })
                 //Error Handling
                 .catch((error) => {
