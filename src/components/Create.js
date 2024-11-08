@@ -21,6 +21,7 @@ function Create() {
     poster: poster
   };
   
+  //post to server using axios
   axios.post('http://localhost:4000/api/movies', movie)
     .then((res) => console.log(res.data))
     .catch((err) => console.log(err.data));
