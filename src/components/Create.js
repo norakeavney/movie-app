@@ -28,6 +28,8 @@ function Create() {
 
 };
 
+
+
   //Form with fields for title, year and poster 
   //Allows button to pressed to sent data into handleSubmit
   return (
