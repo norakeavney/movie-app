@@ -27,22 +27,6 @@ mongoose.connect(process.env.MONGO_URI, {
 // Import Movie model
 const Movie = require('./models/movie');
 
-// Routes
-
-// POST: Add a new movie to the database
-app.post('/api/movies', async (req, res) => {
-    try {
-        const { title, year, poster } = req.body;
-        const newMovie = new Movie({ title, year, poster });
-        await newMovie.save();
-
-        res.status(201).json({ message: 'Movie created successfully', movie: newMovie });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Error creating movie' });
-    }
-});
-
 // GET: Retrieve all movies from the database
 app.get('/api/movies', async (req, res) => {
     try {
@@ -65,6 +49,20 @@ app.get('/api/movie/:id', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error retrieving movie' });
+    }
+});
+
+// POST: Add a new movie to the database
+app.post('/api/movies', async (req, res) => {
+    try {
+        const { title, year, poster } = req.body;
+        const newMovie = new Movie({ title, year, poster });
+        await newMovie.save();
+
+        res.status(201).json({ message: 'Movie created successfully', movie: newMovie });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error creating movie' });
     }
 });
 
