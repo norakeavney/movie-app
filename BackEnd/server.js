@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 
 // MongoDB Connection - Cluster1
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://g00415845:<Computer5576559>@cluster1.tczoy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1');
+mongoose.connect('mongodb+srv://Admin:Admin@cluster1.tczoy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1');
 
 
 // Import Movie model - added models folder
-const Movie = require('./models/movies');
+const Movie = require('../models/movies');
 
 //Add new movie records
 app.post('/api/movies', async (req, res)=>{
