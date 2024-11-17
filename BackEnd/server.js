@@ -1,7 +1,6 @@
 // Imports
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 // Create Express app
@@ -19,7 +18,7 @@ mongoose.connect('mongodb+srv://g00415845:<Computer5576559>@cluster1.tczoy.mongo
 
 
 // Import Movie model
-const Movie = require('./models/movie');
+const Movie = require('./models/movies');
 
 //Add new movie records
 app.post('/api/movies', async (req, res)=>{
