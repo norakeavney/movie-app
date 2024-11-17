@@ -21,9 +21,29 @@ mongoose.connect('mongodb+srv://g00415845:<Computer5576559>@cluster1.tczoy.mongo
 // Import Movie model
 const Movie = require('./models/movie');
 
-// Routes
-const movieRoutes = require('./routes/movieRoutes');
-app.use('/api', movieRoutes);
+//Add new movie records
+app.post('/api/movies', async (req, res)=>{
+
+    const { title, year, poster } = req.body;
+   
+    const newMovie = new Movie({ title, year, poster });
+    await newMovie.save();
+   
+    res.status(201).json({ message: 'Movie created successfully', movie: newMovie });
+})
+
+//retrieve all movie records
+app.get('/api/movies', async (req, res) => {
+    const movies = await Movie.find({});
+    res.json(movies);
+});
+
+//retrieve specific movies from id
+app.get('/api/movie/:id', async (req, res) => {
+const movie = await Movie.findById(req.params.id);
+res.send(movie);
+});
+
 
 
 // Error Handling Middleware (should be at the end)
