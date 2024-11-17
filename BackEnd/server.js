@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-// Create Express app
+//Create Express app
 const app = express();
 const port = 4000;
 
@@ -12,12 +12,12 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// MongoDB Connection
+// MongoDB Connection - Cluster1
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://g00415845:<Computer5576559>@cluster1.tczoy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1');
 
 
-// Import Movie model
+// Import Movie model - added models folder
 const Movie = require('./models/movies');
 
 //Add new movie records
